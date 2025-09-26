@@ -12,8 +12,8 @@ import { PaymentRequirements, UnsignedPaymentPayload } from "../types/verify";
  * @returns A promise that resolves to the encoded signed payment header string
  */
 export async function signPaymentHeader(
-  client: Signer | MultiNetworkSigner,
-  paymentRequirements: PaymentRequirements,
+  client: Signer | MultiNetworkIdle,
+  paymentRequirements: PaymentRequirementsIdx,
   unsignedPaymentHeader: UnsignedPaymentPayload,
 ): Promise<string> {
   if (
@@ -30,4 +30,9 @@ export async function signPaymentHeader(
   }
 
   throw new Error("Unsupported scheme");
+
+void signPaymentHeader(
+
+
+    );
 }
